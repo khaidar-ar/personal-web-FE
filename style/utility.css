@@ -1,0 +1,127 @@
+:root {
+    --bg-primary: #112B3C;
+    --bg-secondary: #F7F7F7;
+    --font-color-primary: #fff;
+    --font-color-secondary: #000;
+    --color-var-style: #033FFF;
+    --shadow-top-primary: rgba(255, 255, 255, 1);
+    --shadow-btm-primary: rgba(193, 193, 193, 0.6);
+    --shadow-top-secondary: #17364B;
+    --shadow-btm-secondary: #0E212D;
+    --bg-main-gradient: linear-gradient(to bottom right, rgba(34, 40, 49, 1), rgba(23, 54, 75, 1));
+    --glass-effect-bg: linear-gradient(to bottom right, rgba(255, 255, 255, .4), rgba(255, 255, 255, .2));
+    --glass-effect-shadow-top: rgba(255, 255, 255, .4);
+    --glass-effect-shadow-btm: rgba(14, 33, 45, 1);
+    --glass-effect-border: #fff;
+    --menu-glass-effect-bg: linear-gradient(to bottom right, rgba(3, 63, 255, .4), rgba(3, 63, 255, .2));
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    cursor: default;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-secondary);
+    color: var(--font-color-primary);
+    line-height: 2rem;
+    -webkit-tap-highlight-color: transparent;
+}
+
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+::placeholder {
+    color: var(--bg-secondary);
+    font-weight: 300;
+}
+
+.container {
+    max-width: 1820px;
+    margin: 0 auto;
+    padding: 100px 80px;
+    height: auto;
+}
+
+h1 {
+    font-size: 10rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    display: inline-block;
+    padding: 0;
+    color: var(--font-color-primary);
+}
+
+
+
+.bttn {
+    padding: 0.3em 1.5em;
+    background-color: var(--bg-primary);
+    border-radius: 7.5px;
+}
+
+
+.bttn-primary {
+    box-shadow: -2px -2px 4px var(--shadow-top-secondary), 2px 2px 4px var(--shadow-btm-secondary);
+    transition: .2s;
+    border: none;
+}
+
+.card-title,
+.card-text {
+    color: var(--bg-primary)
+}
+
+.bttn-primary:active {
+    box-shadow: inset -2px -2px 4px var(--shadow-top-secondary), inset 2px 2px 4px var(--shadow-btm-secondary);
+}
+
+.bttn-primary:hover,
+.bttn-primary>a:hover {
+    cursor: pointer;
+}
+
+.bttn-secondary {
+    background-color: var(--color-var-style);
+    border: none;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, .6);
+
+    padding: .8em .4em;
+    align-self: flex-end;
+}
+
+.bttn-secondary:active {
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, .6);
+}
+
+a:hover {
+    cursor: default;
+    transform: none;
+    color: inherit;
+}
