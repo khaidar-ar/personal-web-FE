@@ -48,8 +48,25 @@ function serviceHovers() {
         }
     }
 }
+let i = 0;
+
+function precentageAnimationBar() {
+    const numb = document.querySelectorAll('.skill-title p:nth-of-type(2)');
+    setInterval(() => {
+        numb.forEach(e => {
+            let terminal = parseInt(e.textContent);
+            if (i === 20) {
+                clearInterval();
+            } else {
+                i++;
+                e.textContent = i + '%'
+                console.log(e);
+            }
+        });
+    }, 3000);
 
 
+}
 
 
 let cursor = 0,
@@ -97,6 +114,7 @@ function typeAnimation() {
 // prev.addEventListener('click', () => {
 //     slide.scrollLeft -= 200;
 // })
+precentageAnimationBar();
 typeAnimation();
 menuHandler();
 serviceHovers();
