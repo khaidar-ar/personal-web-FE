@@ -299,6 +299,7 @@ main .container {
     height: 100%;
     background-color: var(--color-var-style);
     border-radius: 10px;
+    animation: precentage-bar 5s ease-in;
 }
 
 
@@ -1135,5 +1136,17 @@ footer .container p {
 
     .hide-icon {
         display: none;
+    }
+}
+
+@keyframes precentage-bar {
+    0% {
+        width: 0%;
+    }
+
+
+
+    60% {
+        width: 60%;
     }
 }
