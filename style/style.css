@@ -326,7 +326,8 @@ main .container {
     height: 100%;
     background-color: var(--color-var-style);
     border-radius: 10px;
-    animation: precentage-bar 3s ease-in;
+    animation: precentage-bar ease-in;
+    animation-duration: 3s;
 }
 
 

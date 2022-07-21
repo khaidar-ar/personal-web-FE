@@ -48,24 +48,30 @@ function serviceHovers() {
         }
     }
 }
-let i = 0;
+
+function prog() {
+    const times = document.querySelectorAll('.skill-content .skill-inner .skill-fill-in');
+    times.forEach(time => {
+        time.addEventListener('webkitAnimationStart', precentageAnimationBar());
+    })
+}
 
 function precentageAnimationBar() {
-    const numb = document.querySelectorAll('.skill-title p:nth-of-type(2)');
-    setInterval(() => {
-        numb.forEach(e => {
-            let terminal = parseInt(e.textContent);
-            if (i === 20) {
-                clearInterval();
+    const numbs = document.querySelectorAll('.skill-title p:nth-of-type(2)');
+
+    numbs.forEach(numb => {
+        let numbDisplay = numb.textContent;
+        let iterator = 0;
+        const iterateNumb = () => {
+            if (iterator < numbDisplay) {
+                numb.textContent = iterator++ + '%';
+                setTimeout(iterateNumb, 10);
             } else {
-                i++;
-                e.textContent = i + '%'
-                console.log(e);
+                numb.textContent = numbDisplay + '%';
             }
-        });
-    }, 3000);
-
-
+        }
+        iterateNumb();
+    });
 }
 
 
@@ -114,6 +120,9 @@ function typeAnimation() {
 // prev.addEventListener('click', () => {
 //     slide.scrollLeft -= 200;
 // })
+
+
+// prog();
 precentageAnimationBar();
 typeAnimation();
 menuHandler();
