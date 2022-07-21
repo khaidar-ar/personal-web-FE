@@ -115,14 +115,17 @@ main .container {
 .text-content h2 {
     z-index: 2;
     position: relative;
+    color: var(--color-var-style);
 }
 
-.text-content h2 span {
+.text-content h2 .typing {
     font-size: inherit;
-    color: var(--color-var-style);
+    color: var(--font-color-primary);
     z-index: 2;
     position: relative;
 }
+
+
 
 .text-content p {
     position: relative;

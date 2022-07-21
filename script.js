@@ -50,6 +50,33 @@ function serviceHovers() {
 }
 
 
+
+
+let cursor = 0,
+    pointer = 0;
+
+function typeAnimation() {
+    const text = document.querySelector('.typing');
+    const text_Content = ['Khaidar', 'Web developer', 'Software Engineer', 'Tech Enthusiast'];
+    let temp = '';
+    let showText = '';
+
+    if (cursor === text_Content.length) {
+        cursor = 0;
+    }
+    temp = text_Content[cursor];
+    showText = temp.slice(0, ++pointer);
+    text.textContent = showText;
+    if (showText.length === temp.length) {
+        cursor++;
+        pointer = 0;
+    }
+    setTimeout(typeAnimation, 400);
+}
+
+
+
+
 // function serviceHover() {
 //     const serviceItem = document.querySelector('.service-item');
 //     if (serviceItem) {
@@ -61,18 +88,15 @@ function serviceHovers() {
 // }
 
 
-const slide = document.querySelector('swipper');
-const next = document.querySelector('swiper-button-next');
-const prev = document.querySelector('swiper-button-prev');
-next.addEventListener('click', () => {
-    slide.scrollLeft += 200;
-})
-prev.addEventListener('click', () => {
-    slide.scrollLeft -= 200;
-})
-
-
-
-
+// const slide = document.querySelector('swipper');
+// const next = document.querySelector('swiper-button-next');
+// const prev = document.querySelector('swiper-button-prev');
+// next.addEventListener('click', () => {
+//     slide.scrollLeft += 200;
+// })
+// prev.addEventListener('click', () => {
+//     slide.scrollLeft -= 200;
+// })
+typeAnimation();
 menuHandler();
 serviceHovers();
