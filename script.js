@@ -62,10 +62,19 @@ function precentageAnimationBar() {
     numbs.forEach(numb => {
         let numbDisplay = numb.textContent;
         let iterator = 0;
+        let time = 0;
+        const durations = document.querySelectorAll('.skill-content .skill-outer .skill-inner .skill-fill-in');
+
+        // ========== get-animation-duration-each-fill-in ==========
+        durations.forEach(duration => {
+            time = window.getComputedStyle(duration).animationDuration;
+            time = (parseInt(time) * 1000) / parseInt(numbDisplay);
+        })
+        // ========== iterate-display-number-precentage ==========
         const iterateNumb = () => {
             if (iterator < numbDisplay) {
                 numb.textContent = iterator++ + '%';
-                setTimeout(iterateNumb, 10);
+                setTimeout(iterateNumb, time - 10);
             } else {
                 numb.textContent = numbDisplay + '%';
             }
@@ -97,6 +106,9 @@ function typeAnimation() {
     setTimeout(typeAnimation, 400);
 }
 
+function invokeWhenScroll() {
+
+}
 
 
 
@@ -122,8 +134,8 @@ function typeAnimation() {
 // })
 
 
-// prog();
-precentageAnimationBar();
+prog();
+// precentsageAnimationBar();
 typeAnimation();
 menuHandler();
 serviceHovers();

@@ -107,7 +107,7 @@ main .container {
 }
 
 .text-content h1 {
-    position: relative;
+    /* position: relative; */
     left: -10px;
     color: var(--color-var-style);
     line-height: 1em;
@@ -115,12 +115,20 @@ main .container {
 
 }
 
+.typing-wrapper {
+    position: relative;
+    margin: 20px 0;
+    width: auto;
+    height: auto;
+
+}
+
 .text-content h2 {
     z-index: 2;
     position: absolute;
-    bottom: 83px;
+    bottom: -20px;
     color: var(--color-var-style);
-    width: 100vw;
+    width: 60vw;
     /* width: 100%; */
 }
 
@@ -128,12 +136,13 @@ main .container {
     font-size: inherit;
     color: var(--font-color-primary);
     z-index: 2;
+    margin-bottom: 20px;
 }
 
 
 .text-content p {
     position: relative;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     z-index: 2;
 }
 
@@ -143,9 +152,10 @@ main .container {
     height: 150%;
     border: 5px solid var(--color-var-style);
     position: absolute;
-    right: 20px;
+    right: 5%;
     top: -100px;
     z-index: 1;
+    animation: fade-box-left 3s ease-in;
 }
 
 
@@ -156,9 +166,10 @@ main .container {
     height: 150%;
     border: 3px solid var(--color-var-style);
     position: absolute;
-    right: -30px;
+    right: -5%;
     top: -60px;
     z-index: 1;
+    animation: fade-box-right 3s ease-in;
 }
 
 
@@ -326,8 +337,7 @@ main .container {
     height: 100%;
     background-color: var(--color-var-style);
     border-radius: 10px;
-    animation: precentage-bar ease-in;
-    animation-duration: 3s;
+    animation: precentage-bar 3s ease-in;
 }
 
 
@@ -706,6 +716,17 @@ footer .container p {
 }
 
 @media only screen and (max-width: 1000px) {
+    main .container {
+        padding: 100px 40px;
+    }
+
+    .typing-wrapper h2 {
+
+        width: 70vw;
+
+        /* display: none; */
+    }
+
     .about-content-wrapper {
         width: 110%;
         padding: 50px;
@@ -905,34 +926,41 @@ footer .container p {
 
     /* =============== main-section =============== */
 
+    main .container {
+        padding: 80px 20px;
+    }
+
     .text-content h1 {
         left: -7px;
     }
 
+
+
     .text-content h2 {
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         letter-spacing: 0.2em;
-        bottom: 100px;
-        width: 100%;
+        width: auto;
+        bottom: -5px;
         /* display: none; */
     }
 
     .text-content p {
-        line-height: 2em;
-        margin-top: 30px;
+        line-height: 1.2em;
+        /* margin-top: 30px; */
     }
 
 
     .text-content::before {
-
+        width: 40%;
         height: 115%;
-        right: 8vw;
+        right: 20%;
         top: -30px;
     }
 
     .text-content::after {
+        width: 40%;
         height: 115%;
-        right: 2vw;
+        right: 10%;
         top: -5px;
     }
 
