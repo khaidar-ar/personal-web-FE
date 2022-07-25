@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-primary: #112B3C;
+    --bg-secondary: #F7F7F7;
+    --font-color-primary: #fff;
+    --font-color-secondary: #000;
+    --color-var-style: #033FFF;
+    --shadow-top-primary: rgba(255, 255, 255, 1);
+    --shadow-btm-primary: rgba(193, 193, 193, 0.6);
+    --shadow-top-secondary: #17364B;
+    --shadow-btm-secondary: #0E212D;
+    --bg-main-gradient: linear-gradient(to bottom right, rgba(34, 40, 49, 1), rgba(23, 54, 75, 1));
+    --glass-effect-bg: linear-gradient(to bottom right, rgba(255, 255, 255, .4), rgba(255, 255, 255, .2));
+    --glass-effect-shadow-top: rgba(255, 255, 255, .4);
+    --glass-effect-shadow-btm: rgba(14, 33, 45, 1);
+    --glass-effect-border: #fff;
+    --menu-glass-effect-bg: linear-gradient(to bottom right, rgba(3, 63, 255, .4), rgba(3, 63, 255, .2));
+}
+
+/* body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-secondary);
+    color: var(--font-color-primary);
+    line-height: 2rem;
+    -webkit-tap-highlight-color: transparent;
+} */
+
+ul li {
+    list-style: none;
+}
+
+
+.container {
+    max-width: 1820px;
+    margin: 0 auto;
+    padding: 100px 80px;
+    height: auto;
+}
