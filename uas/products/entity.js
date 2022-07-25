@@ -1,9 +1,10 @@
 export let products = {
     data: [{
-            productName: "Regular White T-Shirt",
-            category: "Topwear",
+            productName: "Volvo fmx-91799",
+            category: "Truck",
+            // brand:""
             price: "30",
-            image: "white-tshirt.jpg",
+            image: "./media/truk-volvo-fmx-91799.png",
         },
         {
             productName: "Beige Short Skirt",

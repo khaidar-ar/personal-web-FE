@@ -6,7 +6,7 @@ for (let i of products.data) {
     //Create Card
     let card = document.createElement("li");
     //Card should have category and should stay hidden initially
-    card.classList.add("card", i.category, "hide", "splide__slide", "col-3", "m-2");
+    card.classList.add("card", i.category, "hide", "splide__slide");
     //image div
     let imgContainer = document.createElement("div");
     imgContainer.classList.add("image-container");

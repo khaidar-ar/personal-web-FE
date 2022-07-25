@@ -1,7 +1,7 @@
 @import"../utility.css";
 
 .products .container {
-    height: 100vw;
+    height: auto;
 }
 
 
@@ -48,13 +48,24 @@
 
 .products-section {
     margin-top: 100px;
-    height: 500px;
+    height: auto;
+    width: 100%;
 }
 
 .splide__track {
-    height: inherit;
+    height: 80%;
+    padding: 100px;
+    width: 100%;
 }
 
-.card .splide__slide {
+.splide__track .splide__list {
+    width: inherit;
+    height: 100%;
+}
+
+
+.card {
+    width: 30% !important;
+    margin: 10px;
     height: 100%;
 }
