@@ -45,29 +45,56 @@ for (let i of products.data) {
     document.getElementById("products").appendChild(card);
 }
 
-//pass button(category) on click as parameter
-function filterProduct(value) {
-    //Button class code
+const filterBtn = () => {
+    const filter = document.querySelectorAll('.dropdown-item');
+    const merk = document.querySelector('.merk-menu');
+    const category = document.querySelector('.category-menu');
+    filter.forEach(item => {
+        item.addEventListener('click', () => {
+            filterMenu(item.innerHTML, merk, category);
+        })
+    })
+}
+
+const filterMenu = (item, menuMerk, menuCtg) => {
+    if (item.toUpperCase() === "merk".toUpperCase()) {
+        console.log(item);
+        menuMerk.classList.remove('hide');
+        menuCtg.classList.add('hide');
+    }
+    if (item.toUpperCase() === "category".toUpperCase()) {
+        console.log(item);
+        menuMerk.classList.add('hide');
+        menuCtg.classList.remove('hide');
+    }
+}
+
+
+const filterize = () => {
     let buttons = document.querySelectorAll(".button-value");
-    buttons.forEach((button) => {
-        //check if value equals innerText
-        if (value.toUpperCase() == button.innerText.toUpperCase()) {
-            button.classList.add("active");
-        } else {
-            button.classList.remove("active");
-        }
-    });
-    //select all cards
+    buttons.forEach(btn => {
+        let value = btn.innerHTML;
+        btn.addEventListener('click', () => { //select all cards
+            filterProduct(value);
+        })
+
+    })
+}
+
+function filterProduct(value) {
     let elements = document.querySelectorAll(".card");
     elements.forEach((element) => {
         //display all cards on 'all' button click
-        if (value == "all") {
+        if (value === "all") {
             element.classList.remove("hide");
         } else {
+
             //Check if element contains category class
             if (element.classList.contains(value)) {
                 //display element based on category
                 element.classList.remove("hide");
+                console.log(value)
+
             } else {
                 //hide other elements
                 element.classList.add("hide");
@@ -75,30 +102,34 @@ function filterProduct(value) {
         }
     });
 }
-//Search button click
-document.getElementById("search").addEventListener("click", () => {
-    //initial DOM object
-    let searchInput = document.getElementById("search-input").value;
-    let elements = document.querySelectorAll(".product-name");
-    let cards = document.querySelectorAll(".card");
-    //grap all elements
-    elements.forEach((element, index) => {
-        //check if text contain search value
-        if (element.innerText.includes(searchInput.toUpperCase())) {
-            //display card
-            cards[index].classList.remove("hide");
-        } else {
-            //hide others
-            cards[index].classList.add("hide");
-        }
+
+const searchMode = () => {
+    //Search button click
+    document.getElementById("search").addEventListener("click", () => {
+        //initial DOM object
+        let searchInput = document.getElementById("search-input").value;
+        let elements = document.querySelectorAll(".product-name");
+        let cards = document.querySelectorAll(".card");
+        //grap all elements
+        elements.forEach((element, index) => {
+            //check if text contain search value
+            if (element.innerText.includes(searchInput.toUpperCase())) {
+                //display card
+                cards[index].classList.remove("hide");
+            } else {
+                //hide others
+                cards[index].classList.add("hide");
+            }
+        });
     });
-});
+}
+filterize();
+searchMode();
+filterBtn();
 //Invoke display all product onCreate
 window.onload = () => {
     filterProduct("all");
 };
-
-
 var splide = new Splide('.splide', {
     perPage: 3,
     rewind: true,
