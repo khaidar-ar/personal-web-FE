@@ -47,25 +47,35 @@
 }
 
 .products-section {
-    margin-top: 100px;
     height: auto;
     width: 100%;
+    padding: 0 100px;
 }
 
 .splide__track {
-    height: 80%;
     padding: 100px;
     width: 100%;
 }
 
-.splide__track .splide__list {
-    width: inherit;
+#products .splide__list {
+    height: 100% !important;
+}
+
+.card {
+    /* width: 25% !important; */
+    margin: 10px;
     height: 100%;
 }
 
+.card-img-top {
+    height: 150px;
+    object-fit: fill;
+}
 
-.card {
-    width: 30% !important;
-    margin: 10px;
-    height: 100%;
+.text-content {
+    height: auto;
+}
+
+.splide__pagination {
+    margin-top: 0;
 }

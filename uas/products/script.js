@@ -6,24 +6,31 @@ for (let i of products.data) {
     //Create Card
     let card = document.createElement("li");
     //Card should have category and should stay hidden initially
-    card.classList.add("card", i.category, "hide", "splide__slide");
-    //image div
-    let imgContainer = document.createElement("div");
-    imgContainer.classList.add("image-container");
+    card.classList.add("card", i.category, i.brand, "hide", "splide__slide");
     //img tag
     let image = document.createElement("img");
     image.setAttribute("src", i.image);
     image.classList.add("card-img-top")
-    imgContainer.appendChild(image);
+    card.appendChild(image);
     card.appendChild(image);
     //container
     let textContent = document.createElement("div");
-    textContent.classList.add("text-content", "card-body");
+    textContent.classList.add("text-content", "card-body", "mt-2");
     //product name
     let name = document.createElement("h5");
     name.classList.add("product-name", "card-title");
     name.innerText = i.productName.toUpperCase();
     textContent.appendChild(name);
+
+    let brand = document.createElement("h6");
+    brand.classList.add("product-brand");
+    brand.innerText = i.brand.toUpperCase();
+    textContent.appendChild(brand);
+
+    let category = document.createElement("h6");
+    category.classList.add("product-category");
+    category.innerText = i.category.toUpperCase();
+    textContent.appendChild(category);
     //price
     let price = document.createElement("p");
     price.innerText = "$" + i.price;
@@ -38,7 +45,7 @@ for (let i of products.data) {
     document.getElementById("products").appendChild(card);
 }
 
-//parameter passed from button (Parameter same as category)
+//pass button(category) on click as parameter
 function filterProduct(value) {
     //Button class code
     let buttons = document.querySelectorAll(".button-value");
@@ -52,7 +59,6 @@ function filterProduct(value) {
     });
     //select all cards
     let elements = document.querySelectorAll(".card");
-    //loop through all cards
     elements.forEach((element) => {
         //display all cards on 'all' button click
         if (value == "all") {
@@ -71,15 +77,15 @@ function filterProduct(value) {
 }
 //Search button click
 document.getElementById("search").addEventListener("click", () => {
-    //initializations
+    //initial DOM object
     let searchInput = document.getElementById("search-input").value;
     let elements = document.querySelectorAll(".product-name");
     let cards = document.querySelectorAll(".card");
-    //loop through all elements
+    //grap all elements
     elements.forEach((element, index) => {
-        //check if text includes the search value
+        //check if text contain search value
         if (element.innerText.includes(searchInput.toUpperCase())) {
-            //display matching card
+            //display card
             cards[index].classList.remove("hide");
         } else {
             //hide others
@@ -87,7 +93,7 @@ document.getElementById("search").addEventListener("click", () => {
         }
     });
 });
-//Initially display all products
+//Invoke display all product onCreate
 window.onload = () => {
     filterProduct("all");
 };
