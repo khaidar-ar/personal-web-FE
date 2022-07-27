@@ -1,11 +1,69 @@
 @import"../utility.css";
 
+body {
+    background-color: var(--bg-main);
+    color: var(--font-main);
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: .8rem;
+    font-weight: 200;
+}
+
 .products .container {
     height: auto;
 }
 
+.btn {
+    background-color: var(--bg-main);
+    box-shadow: 6px 6px 12px var(--shadow-top-main), -6px -6px 12px var(--shadow-bottom-main);
+    border: none;
+    padding: .3em 1.5em;
+}
 
+.btn:active:focus,
+.btn:active {
+    box-shadow: none;
+}
 
+.btn:hover {
+    background-color: var(--red-secondary);
+    font-weight: 300;
+}
+
+.btn.show {
+    background-color: var(--red-secondary);
+}
+
+.btn.show:focus {
+    box-shadow: none;
+}
+
+.btn.show:hover {
+    background-color: var(--red-secondary);
+}
+
+.btn-outline-success {
+    color: var(--font-main);
+
+}
+
+.btn-outline-success:active {
+    border: none;
+    box-shadow: none;
+    background-color: var(--color-var-style);
+}
+
+.form-control:focus {
+    border-color: none;
+    box-shadow: 1px 1px var(--red-secondary)inset, 0 0 8px var(--red-secondary);
+}
 
 .options-wrapper {
     display: flex;
@@ -47,24 +105,27 @@
 }
 
 .products-section {
+    margin: 0 auto;
     height: auto;
-    width: 100%;
-    padding: 0 100px;
+    width: 80%;
 }
 
 .splide__track {
-    padding: 100px;
+    min-height: 70%;
+    padding: 100px 0 0 0;
     width: 100%;
 }
 
-#products .splide__list {
-    height: 100% !important;
+.splide__list {
+    gap: 50px;
 }
 
 .card {
-    /* width: 25% !important; */
-    margin: 10px;
-    height: 100%;
+    border: none;
+    background-color: var(--bg-main-op);
+    box-shadow: 6px 6px 12px var(--shadow-top-main), -6px -6px 12px var(--shadow-bottom-main);
+    position: relative;
+    margin-bottom: 100px;
 }
 
 .card-img-top {
@@ -78,4 +139,21 @@
 
 .splide__pagination {
     margin-top: 0;
+}
+
+.btn-buy {
+    position: absolute;
+    bottom: 10px;
+}
+
+.button-value {
+    color: inherit;
+    padding: .6em .8em;
+    background-color: inherit;
+    border: none;
+}
+
+.button-value:hover,
+.button-value:focus {
+    border-bottom: 2px solid var(--red-secondary);
 }

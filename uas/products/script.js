@@ -6,7 +6,7 @@ for (let i of products.data) {
     //Create Card
     let card = document.createElement("li");
     //Card should have category and should stay hidden initially
-    card.classList.add("card", i.category, i.brand, "hide", "splide__slide");
+    card.classList.add("card", i.category, i.brand, "hide", "splide__slide", "col-4");
     //img tag
     let image = document.createElement("img");
     image.setAttribute("src", i.image);
@@ -15,7 +15,7 @@ for (let i of products.data) {
     card.appendChild(image);
     //container
     let textContent = document.createElement("div");
-    textContent.classList.add("text-content", "card-body", "mt-2");
+    textContent.classList.add("text-content", "card-body", "mb-5");
     //product name
     let name = document.createElement("h5");
     name.classList.add("product-name", "card-title");
@@ -39,7 +39,7 @@ for (let i of products.data) {
 
     let buy = document.createElement("a");
     buy.innerText = "buy";
-    buy.classList.add("btn", "btn-primary");
+    buy.classList.add("btn", "btn-primary", "btn-buy", "mb-3");
     textContent.append(buy);
     card.appendChild(textContent);
     document.getElementById("products").appendChild(card);
@@ -57,13 +57,15 @@ const filterBtn = () => {
 }
 
 const filterMenu = (item, menuMerk, menuCtg) => {
+    if (item.toUpperCase() === "all".toUpperCase()) {
+        menuMerk.classList.add('hide');
+        menuCtg.classList.add('hide');
+    }
     if (item.toUpperCase() === "merk".toUpperCase()) {
-        console.log(item);
         menuMerk.classList.remove('hide');
         menuCtg.classList.add('hide');
     }
     if (item.toUpperCase() === "category".toUpperCase()) {
-        console.log(item);
         menuMerk.classList.add('hide');
         menuCtg.classList.remove('hide');
     }
@@ -74,7 +76,8 @@ const filterize = () => {
     let buttons = document.querySelectorAll(".button-value");
     buttons.forEach(btn => {
         let value = btn.innerHTML;
-        btn.addEventListener('click', () => { //select all cards
+        btn.addEventListener('click', () => {
+            //select all cards
             filterProduct(value);
         })
 
@@ -85,19 +88,22 @@ function filterProduct(value) {
     let elements = document.querySelectorAll(".card");
     elements.forEach((element) => {
         //display all cards on 'all' button click
-        if (value === "all") {
+        if (value.toUpperCase() === "all".toUpperCase()) {
             element.classList.remove("hide");
+            element.classList.add("splide__slide");
         } else {
 
             //Check if element contains category class
             if (element.classList.contains(value)) {
                 //display element based on category
                 element.classList.remove("hide");
+                element.classList.add("splide__slide");
                 console.log(value)
 
             } else {
                 //hide other elements
                 element.classList.add("hide");
+                element.classList.remove("splide__slide");
             }
         }
     });
@@ -131,8 +137,11 @@ window.onload = () => {
     filterProduct("all");
 };
 var splide = new Splide('.splide', {
+    type: 'loop',
     perPage: 3,
+    focus: 'center',
     rewind: true,
+    rewindSpeed: 4000,
 });
 
 splide.mount();

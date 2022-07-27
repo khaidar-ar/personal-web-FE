@@ -20,6 +20,12 @@
     --glass-effect-shadow-btm: rgba(14, 33, 45, 1);
     --glass-effect-border: #fff;
     --menu-glass-effect-bg: linear-gradient(to bottom right, rgba(3, 63, 255, .4), rgba(3, 63, 255, .2));
+    --font-main: #F6FBF4;
+    --bg-main: #1c1c1c;
+    --bg-main-op: #1d1d1d;
+    --shadow-top-main: #191919;
+    --shadow-bottom-main: #1f1f1f;
+    --red-secondary: #990000;
 }
 
 /* body {
@@ -29,6 +35,9 @@
     line-height: 2rem;
     -webkit-tap-highlight-color: transparent;
 } */
+a {
+    text-decoration: none;
+}
 
 ul li {
     list-style: none;
