@@ -61,8 +61,8 @@
 
                             <!-- Email input -->
                             <div class="form-outline mb-4">
-                                <input type="email" id="loginName" class="form-control login" />
-                                <label class="form-label" for="loginName">Email or username</label>
+                                <input type="name" id="loginName" class="form-control login" />
+                                <label class="form-label" for="loginName">Username</label>
                             </div>
 
                             <!-- Password input -->
@@ -89,7 +89,7 @@
                             </div>
 
                             <!-- Submit button -->
-                            <button type="submit" class="btn btn-primary btn-block mb-4 btn-login"><a href="">Sign
+                            <button class="btn btn-primary btn-block mb-4" id="login"><a href="" class="direct-log">Sign
                                     in</a></button>
 
                             <!-- Register buttons -->
@@ -161,7 +161,8 @@
                             </div>
 
                             <!-- Submit button -->
-                            <button type="get" class="btn btn-primary btn-block mb-3 btn-regis">Register</button>
+                            <button type="submit" class="btn btn-primary btn-block mb-3 btn-register"
+                                id="register">Register</button>
                         </form>
                     </div>
                 </div>
@@ -171,7 +172,7 @@
     </div>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.3.0/mdb.min.js"></script>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 
 </html>

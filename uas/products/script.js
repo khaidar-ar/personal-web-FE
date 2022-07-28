@@ -1,7 +1,7 @@
 import {
     products
 } from './entity.js';
-
+const prod = document.querySelector('#products');
 for (let i of products.data) {
     //Create Card
     let card = document.createElement("li");
@@ -42,8 +42,9 @@ for (let i of products.data) {
     buy.classList.add("btn", "btn-primary", "btn-buy", "mb-3");
     textContent.append(buy);
     card.appendChild(textContent);
-    document.getElementById("products").appendChild(card);
+    prod.appendChild(card);
 }
+
 
 const filterBtn = () => {
     const filter = document.querySelectorAll('.dropdown-item');
@@ -78,35 +79,37 @@ const filterize = () => {
         let value = btn.innerHTML;
         btn.addEventListener('click', () => {
             //select all cards
-            filterProduct(value);
+            // filterProduct(value);
+            console.log(filterProduct(value));
+
         })
 
     })
 }
 
 function filterProduct(value) {
+    let idx = [];
     let elements = document.querySelectorAll(".card");
-    elements.forEach((element) => {
+    elements.forEach((element, i) => {
         //display all cards on 'all' button click
         if (value.toUpperCase() === "all".toUpperCase()) {
             element.classList.remove("hide");
-            element.classList.add("splide__slide");
         } else {
 
             //Check if element contains category class
             if (element.classList.contains(value)) {
                 //display element based on category
                 element.classList.remove("hide");
-                element.classList.add("splide__slide");
                 console.log(value)
 
             } else {
                 //hide other elements
                 element.classList.add("hide");
-                element.classList.remove("splide__slide");
+                idx.push(i);
             }
         }
     });
+    return idx;
 }
 
 const searchMode = () => {
