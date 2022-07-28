@@ -1,24 +1,5 @@
 @import"../utility.css";
 
-body {
-    background-color: var(--bg-main);
-    color: var(--font-main);
-    font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
-}
-
-h5 {
-    font-size: 1rem;
-}
-
-h6 {
-    font-size: .8rem;
-    font-weight: 200;
-}
-
-.products .container {
-    height: auto;
-}
 
 .btn {
     background-color: var(--bg-main);
@@ -63,6 +44,10 @@ h6 {
 .form-control:focus {
     border-color: none;
     box-shadow: 1px 1px var(--red-secondary)inset, 0 0 8px var(--red-secondary);
+}
+
+.products .container {
+    height: auto;
 }
 
 .options-wrapper {

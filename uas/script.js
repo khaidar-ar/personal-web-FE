@@ -39,8 +39,8 @@ function validate() {
         btnLogin.addEventListener('click', () => {
             if (valFromDataLogin(loginName, loginPass)) {
                 dirLog.setAttribute('href', "./products/index.html");
-                console.log('sukses');
             } else {
+                document.querySelector('.warning').classList.remove('hide');
                 console.log('failed');
             }
         })

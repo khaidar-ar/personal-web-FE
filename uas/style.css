@@ -1,5 +1,19 @@
 @import"utility.css";
 
+.container {
+    padding: 0;
+}
+
+span {
+    color: var(--red-secondary);
+    display: inline-block;
+}
+
+.btn,
+.nav-link {
+    box-shadow: 6px 6px 12px var(--shadow-top-main), -6px -6px 12px var(--shadow-bottom-main);
+}
+
 .login-forms {
     background-color: var(--shadow-btm-secondary);
 }
@@ -10,21 +24,25 @@
 }
 
 .login-wrapper {
+    border: none;
     padding: 60px 25px;
-    /* border: 1px solid var(--bg-primary);
-    border-radius: 10px;
-    background-image: var(--glass-effect-bg); */
-
-    /* From https://css.glass */
-    background: rgba(255, 255, 255, 0.47);
+    background: var(--bg-main);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 8px 8px 16px var(--shadow-top-main), -8px -8px 16px var(--shadow-bottom-main);
+    color: var(--font-main);
 }
 
-.btn a {
-    color: #F7F7F7;
+.login {
+    padding: 0;
+}
 
+
+
+.form-control,
+.form-label {
+    color: var(--font-main) !important;
+}
+
+.hide {
+    display: none;
 }
