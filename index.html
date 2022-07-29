@@ -6,16 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, maximum-scale=1">
+    <!-- ========== Google-fonts ========== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap"
         rel="stylesheet">
+    <!-- ========== font-awesome ========== -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- CSS only -->
+    <!-- ========== Bootstrap ========== -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- ========== SplideJs-CSS ========== -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/css/themes/splide-default.min.css">
+    <!-- ========== SplideJs ========== -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.0.7/dist/js/splide.min.js"></script>
+    <!-- ========== CSS ========== -->
     <link rel="stylesheet" href="style/style.css">
 
     <title>Khaid-ar</title>
@@ -34,28 +42,28 @@
                     <li><a href="#services">Services</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
                     <li>
-                        <button class="bttn bttn-contact bttn-primary">
-                            <a href="./uas/index.html">Contact</a>
+                        <button class="btn btn-primary btn-contact">
+                            <a href=''>Contact</a>
                         </button>
                     </li>
                 </ul>
             </nav>
-            <div class="menu-responsive">
+            <div class=" menu-responsive">
                 <i class="fa-solid fa-bars menu-show"></i>
                 <i class="fa-solid fa-xmark exit-menu hide-icon"></i>
             </div>
         </div>
     </header>
     <!-- =============== main-section =============== -->
-    <main class="onScroll">
+    <main>
         <div class="container">
-            <div class="text-content ">
+            <div class="text-content active">
                 <h1>Hello</h1>
                 <div class="typing-wrapper">
                     <h2>I'm <span class="typing"></span></h2>
                 </div>
                 <p>Welcome to my personal web</p>
-                <button class="bttn bttn-hire bttn-primary">
+                <button class="btn btn-primary btn-hire">
                     <a href="#">Hire</a>
                 </button>
             </div>
@@ -213,60 +221,72 @@
             </div>
         </div>
     </div>
-
-    <div class="portfolio onScroll" id="portfolio">
-        <div class="container ">
+    <!-- <i class="fa-solid fa-less-than card-nav-left swiper-button-next"></i>
+    <i class="fa-solid fa-greater-than card-nav-right swiper-button-prev"></i> -->
+    <div class="portfolios onScroll" id="portfolio">
+        <div class="container">
             <h2 class="mb-5">Portfolio</h2>
-            <div class="row px-5 g-5 swiper">
-                <div class="col-12 col-lg-4 ">
-                    <div class="card">
-                        <img src="media/java.png" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Java App</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="mt-2 bttn bttn-secondary bttn-port">Show</a>
-                        </div>
-                    </div>
+            <section class="splide" aria-label="Splide Basic HTML Example">
+                <div class="splide__track">
+                    <ul class="splide__list" id="portfolio">
+                        <li class="card splide__slide">
+                            <img src="media/uas-sc.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Project UAS</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up
+                                    the bulk
+                                    of the card's content.</p>
+                                <a href="uas/index.html" class="mt-2 btn btn-secondary btn-port">Show</a>
+                        </li>
+                        <li class="card splide__slide">
+                            <img src="media/java.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Java App</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make up
+                                    the bulk
+                                    of the card's content.</p>
+                                <a class="mt-2 btn btn-secondary btn-port">Show</a>
+                        </li>
+                        <li class="card splide__slide">
+                            <img src="media/work-polres1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Java App</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make
+                                    up the
+                                    bulk
+                                    of the card's content.</p>
+                                <a class="mt-2 btn btn-secondary btn-port">Show</a>
+                            </div>
+                        </li>
+                        <li class="card splide__slide">
+                            <img src="media/work-interior1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Java App</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make
+                                    up the
+                                    bulk
+                                    of the card's content.</p>
+                                <a class="mt-2 btn btn-secondary btn-port">Show</a>
+                            </div>
+                        </li>
+                        <li class="card splide__slide">
+                            <img src="media/work-interior1.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Java App</h5>
+                                <p class="card-text">Some quick example text to build on the card title and make
+                                    up the
+                                    bulk
+                                    of the card's content.</p>
+                                <a class="mt-2 btn btn-secondary btn-port">Show</a>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-12 col-lg-4 ">
-                    <div class="card">
-                        <img src="media/work-polres1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Java App</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="mt-2 bttn bttn-secondary bttn-port">Show</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4 ">
-                    <div class="card swiper-slide">
-                        <img src="media/work-interior1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Java App</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="mt-2 bttn bttn-secondary bttn-port">Show</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4 ">
-                    <div class="card swiper-slide">
-                        <img src="media/work-interior1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Java App</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
-                                of the card's content.</p>
-                            <a href="#" class="mt-2 bttn bttn-secondary bttn-port">Show</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- <i class="fa-solid fa-less-than card-nav-left swiper-button-next"></i>
-            <i class="fa-solid fa-greater-than card-nav-right swiper-button-prev"></i> -->
+            </section>
         </div>
     </div>
+
+
 
     <!-- =============== contact-section =============== -->
     <div class="contact onScroll" id="contact">
@@ -284,7 +304,7 @@
                     <!-- <label for="">submit</label> -->
                     <input type="text" placeholder="message">
                 </form>
-                <button class="bttn bttn-secondary bttn-submit"><a href="">Submit</a></button>
+                <button class="btn btn-secondary btn-submit"><a href="">Submit</a></button>
             </div>
         </div>
     </div>

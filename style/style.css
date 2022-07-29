@@ -146,7 +146,7 @@ main .container {
     z-index: 2;
 }
 
-.text-content .active::before {
+.text-content::before {
     content: '';
     width: 50%;
     height: 150%;
@@ -160,7 +160,7 @@ main .container {
 
 
 
-.text-content .active::after {
+.text-content::after {
     content: '';
     width: 50%;
     height: 150%;
@@ -178,9 +178,6 @@ main .container {
     margin-top: 20px;
 }
 
-.bttn-hire>a:hover {
-    color: var(--bg-secondary);
-}
 
 /* =============== about-section =============== */
 .about {
@@ -302,6 +299,17 @@ main .container {
     justify-content: space-between;
 }
 
+.skill-title:nth-last-of-type(2) {
+    position: relative;
+    /* right: ; */
+}
+
+.skill-title:nth-last-of-type(2)::after {
+    content: '%';
+    position: absolute;
+    right: -10px;
+}
+
 .skill-outer {
     width: 100%;
     height: 10px;
@@ -309,6 +317,7 @@ main .container {
     box-shadow: 2px 2px 4px var(--shadow-btm-primary), -4px -4px 4px var(--shadow-top-primary);
     border-radius: 10px;
 }
+
 
 .skill-inner {
     width: 80%;
@@ -426,25 +435,40 @@ main .container {
 
 
 /* ============ portfolio-section ============ */
-.portfolio .container h2 {
+.portfolios .container {
+    padding: 100px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.portfolios .container h2 {
     color: var(--color-var-style);
     text-align: center;
 }
 
-.portfolio .container {
+.portfolios .container {
     position: relative;
 }
 
+.splide {
+    width: 80%;
+    padding: 0 100px 80px 100px;
+}
+
+
 
 .card {
+    max-width: 300px;
     box-shadow: 2px 2px 5px var(--shadow-btm-primary), -4px -4px 5px var(--shadow-top-primary);
 }
 
-.bttn-port {
-    padding: .3em 2em;
+.card-img-top {
+    height: 60%;
 }
 
-.card-nav-left,
+/* .card-nav-left,
 .card-nav-right {
     position: absolute;
     font-size: 2rem;
@@ -473,7 +497,7 @@ main .container {
 .card-nav-right {
     top: 50%;
     right: 3%;
-}
+} */
 
 /* ============ contact-section ============ */
 
@@ -1072,31 +1096,14 @@ footer .container p {
 
     /* ============ portfolio-section ============ */
 
-
-
-    .portfolios-card-wrapper {
-        align-items: center;
-        justify-content: center;
-        padding: 0;
+    .splide {
+        width: 100%;
+        padding: 0 40px 40px 40px;
     }
 
-    .portfolio-card {
-        width: 80%;
-        height: 350px;
-    }
 
-    .portfolio-card a {
-        margin-top: 70px;
-    }
-
-    .portfolio-card:nth-of-type(2),
-    .portfolio-card:nth-of-type(3) {
-        display: none;
-    }
-
-    .card-nav-left,
-    .card-nav-right {
-        display: none;
+    .card {
+        width: 250px !important;
     }
 
     /* ============ contact-section ============ */

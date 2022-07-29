@@ -1,3 +1,10 @@
+let cursor = 0,
+    pointer = 0;
+const numbs = document.querySelectorAll('.skill-title p:nth-of-type(2)');
+const times = document.querySelectorAll('.skill-content .skill-inner .skill-fill-in');
+const box = document.querySelector('.text-content::before');
+
+
 function menuHandler() {
     const menuShow = document.querySelector('.menu-show');
     const menuList = document.querySelector('.menu-list');
@@ -48,10 +55,9 @@ function serviceHovers() {
         }
     }
 }
-const numbs = document.querySelectorAll('.skill-title p:nth-of-type(2)');
-const times = document.querySelectorAll('.skill-content .skill-inner .skill-fill-in');
 
-function prog(pNumbs, pTimes) {
+
+function invokePrecentageAnimationBar(pNumbs, pTimes) {
     pTimes.forEach(time => {
         time.addEventListener('webkitAnimationStart', precentageAnimationBar(pNumbs));
     })
@@ -62,7 +68,7 @@ function precentageAnimationBar(pNumbs) {
         let numbDisplay = numb.textContent;
         let iterator = 0;
         let time = 0;
-        const durations = document.querySelectorAll('.skill-content .skill-outer .skill-inner .skill-fill-in');
+        const durations = times;
 
         // ========== get-animation-duration-each-fill-in ==========
         durations.forEach(duration => {
@@ -77,15 +83,10 @@ function precentageAnimationBar(pNumbs) {
             } else {
                 numb.textContent = numbDisplay;
             }
-
         }
         iterateNumb();
     });
 }
-
-
-let cursor = 0,
-    pointer = 0;
 
 function typeAnimation() {
     const text = document.querySelector('.typing');
@@ -112,15 +113,12 @@ function invokeWhenScroll() {
     const bar = document.querySelector('.about');
     window.addEventListener('scroll', () => {
         const onScreen = window.innerHeight;
-        let breakpoint = 840;
         getPages.forEach(page => {
             let onViews = page.getBoundingClientRect().top;
             // onViews -= 0.01;
-
             if (onViews < onScreen / 10) {
-                page.classList.add('active');
                 if (bar) {
-                    prog(numbs, times)
+                    // prog(numbs, times);
                 }
             } else {
                 page.classList.remove('active');
@@ -128,38 +126,28 @@ function invokeWhenScroll() {
             }
             console.log(page.getAttribute('class') + " " + onScreen)
         })
-
-        // console.log(onScreen);
     })
 
 }
 
-function test() {
-    const bd = document.querySelectorAll('body > *');
-    // console.log(bd);
-}
-// function serviceHover() {
-//     const serviceItem = document.querySelector('.service-item');
-//     if (serviceItem) {
-//         serviceItem.addEventListener('click', () => {
-//             document.querySelectorAll('.badge').classList.add('active')
 
-//         })
-//     }
-// }
+var splide = new Splide('.splide', {
+    type: 'loop',
+    perPage: 3,
+    focus: 'center',
+    rewind: true,
+    rewindSpeed: 4000,
+    gap: '5em',
+    breakpoints: {
+        700: {
+            perPage: 1,
+        }
+    }
+});
 
-
-// const slide = document.querySelector('swipper');
-// const next = document.querySelector('swiper-button-next');
-// const prev = document.querySelector('swiper-button-prev');
-// next.addEventListener('click', () => {
-//     slide.scrollLeft += 200;
-// })
-// prev.addEventListener('click', () => {
-//     slide.scrollLeft -= 200;
-// })
+splide.mount();
+invokePrecentageAnimationBar(numbs, times);
 typeAnimation();
-
 invokeWhenScroll();
 menuHandler();
 serviceHovers();

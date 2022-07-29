@@ -139,6 +139,8 @@ filterBtn();
 window.onload = () => {
     filterProduct("all");
 };
+
+
 var splide = new Splide('.splide', {
     type: 'loop',
     perPage: 3,

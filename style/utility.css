@@ -14,6 +14,10 @@
     --glass-effect-shadow-btm: rgba(14, 33, 45, 1);
     --glass-effect-border: #fff;
     --menu-glass-effect-bg: linear-gradient(to bottom right, rgba(3, 63, 255, .4), rgba(3, 63, 255, .2));
+    --box-shadow-primary: -2px -2px 4px var(--shadow-top-secondary), 2px 2px 4px var(--shadow-btm-secondary);
+    --box-shadow-primary-active: inset -2px -2px 4px var(--shadow-top-secondary), inset 2px 2px 4px var(--shadow-btm-secondary);
+    --box-shadow-secondary: 2px 2px 4px rgba(0, 0, 0, .6);
+    --box-shadow-secondary-active: inset 2px 2px 4px rgba(0, 0, 0, .6);
 }
 
 * {
@@ -79,19 +83,47 @@ a {
     color: var(--font-color-primary);
 }
 
-
-
-.bttn {
-    padding: 0.3em 1.5em;
-    background-color: var(--bg-primary);
-    border-radius: 7.5px;
+a:hover {
+    color: inherit;
+    cursor: pointer;
 }
 
 
-.bttn-primary {
-    box-shadow: -2px -2px 4px var(--shadow-top-secondary), 2px 2px 4px var(--shadow-btm-secondary);
-    transition: .2s;
+.btn {
+    padding: 0.6em 1.5em;
+    border-radius: 7.5px;
     border: none;
+}
+
+
+.btn:hover {
+    color: inherit;
+    cursor: pointer;
+}
+
+.btn:active:focus {
+    box-shadow: inset -2px -2px 4px var(--shadow-top-secondary), inset 2px 2px 4px var(--shadow-btm-secondary);
+}
+
+.btn-primary {
+    background-color: var(--bg-primary);
+    box-shadow: var(--box-shadow-primary);
+    color: var(--bg-primary);
+    transition: .2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--bg-primary);
+}
+
+.btn-primary:active {
+    box-shadow: var(--box-shadow-primary-active);
+    background-color: var(--bg-primary);
+}
+
+.btn-primary:focus {
+    box-shadow: var(--box-shadow-primary-active);
+    background-color: var(--bg-primary);
 }
 
 .card-title,
@@ -99,26 +131,27 @@ a {
     color: var(--bg-primary)
 }
 
-.bttn-primary:active {
-    box-shadow: inset -2px -2px 4px var(--shadow-top-secondary), inset 2px 2px 4px var(--shadow-btm-secondary);
-}
 
-.bttn-primary:hover,
-.bttn-primary>a:hover {
-    cursor: pointer;
-}
 
-.bttn-secondary {
+.btn-secondary {
     background-color: var(--color-var-style);
     border: none;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, .6);
-
-    padding: .8em .4em;
+    box-shadow: var(--box-shadow-secondary);
+    /* padding: .8em .4em; */
     align-self: flex-end;
 }
 
-.bttn-secondary:active {
-    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, .6);
+.btn-secondary:hover {
+    background-color: var(--color-var-style);
+}
+
+.btn-secondary:active {
+    box-shadow: var(--box-shadow-secondary-active);
+}
+
+.btn-secondary:focus {
+    box-shadow: var(--box-shadow-secondary-active);
+    color: var(--color-var-style);
 }
 
 a:hover {
