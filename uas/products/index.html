@@ -30,22 +30,50 @@
         <div class="container">
             <div class="options-wrapper">
                 <div class="filter">
-                    <div class="dropdown">
+                    <div class="dropdown filter-opt">
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 Filter
                             </button>
+                            <ul class="dropdown-menu filter-list">
+                                <li><a class="dropdown-item filter-choose" href="#">All</a></li>
+                                <li><a class="dropdown-item filter-choose" href="#">Merk</a></li>
+                                <li><a class="dropdown-item filter-choose" href="#">Category</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown merk hide">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Merk
+                            </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">All</a></li>
-                                <li><a class="dropdown-item" href="#">Merk</a></li>
-                                <li><a class="dropdown-item" href="#">Category</a></li>
+                                <li><a class="dropdown-item button-value" href="#">Honda</a></li>
+                                <li><a class="dropdown-item button-value" href="#">Daihatsu</a></li>
+                                <li><a class="dropdown-item button-value" href="#">Toyota</a></li>
+                                <li><a class="dropdown-item button-value" href="#">Mitsubishi</a></li>
+                                <li><a class="dropdown-item button-value" href="#">Volvo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="dropdown category hide">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Category
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item button-value" href="#">LCGC</a></li>
+                                <li><a class="dropdown-item button-value" href="#">Hypercar</a></li>
+                                <li><a class="dropdown-item button-value" href="#">Truck</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="filter-menu">
-                    <ul class="merk-menu hide">
+                    <ul class="filter-menu merk-menu hide">
                         <!-- <li><button class="button-value" onclick="filterProduct('Toyota')">Toyota</button></li> -->
                         <li><button class="button-value">Honda</button></li>
                         <li><button class="button-value">Toyota</button></li>
@@ -53,7 +81,7 @@
                         <li><button class="button-value">Hino</button></li>
                         <!-- <li><button class="button-value">Mercedes-benz</button></li> -->
                     </ul>
-                    <ul class="category-menu hide">
+                    <ul class="filter-menu category-menu hide">
                         <li class="button-value">LCGC</li>
                         <li class="button-value">Sport</li>
                         <li class="button-value">Truck</li>

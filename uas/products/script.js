@@ -1,12 +1,22 @@
 import {
     products
 } from './entity.js';
-const prod = document.querySelector('#products');
+
+
+const product = document.querySelector('#products');
+const breakPoint = window.matchMedia('(max-width:700px)').matches;
+const filterChoose = document.querySelectorAll('.dropdown-item');
+const merkFlex = document.querySelector('.merk-menu');
+const categoryFlex = document.querySelector('.category-menu');
+const merk = document.querySelector('.merk');
+const category = document.querySelector('.category');
+
+//object init
 for (let i of products.data) {
     //Create Card
     let card = document.createElement("li");
     //Card should have category and should stay hidden initially
-    card.classList.add("card", i.category, i.brand, "hide", "splide__slide", "col-4");
+    card.classList.add("card", i.category, i.brand, "hide", "splide__slide");
     //img tag
     let image = document.createElement("img");
     image.setAttribute("src", i.image);
@@ -42,18 +52,24 @@ for (let i of products.data) {
     buy.classList.add("btn", "btn-primary", "btn-buy", "mb-3");
     textContent.append(buy);
     card.appendChild(textContent);
-    prod.appendChild(card);
+    product.appendChild(card);
 }
 
-
+//display filter flex
 const filterBtn = () => {
-    const filter = document.querySelectorAll('.dropdown-item');
-    const merk = document.querySelector('.merk-menu');
-    const category = document.querySelector('.category-menu');
-    filter.forEach(item => {
+    filterChoose.forEach(item => {
         item.addEventListener('click', () => {
-            filterMenu(item.innerHTML, merk, category);
+            filterMenu(item.innerHTML, merkFlex, categoryFlex);
         })
+    })
+}
+
+const filterBtnMobile = () => {
+    const filter = document.querySelectorAll('.filter-choose');
+    filter.forEach(choose => {
+        choose.addEventListener('click', () => {
+            filterMenu(choose.innerHTML, merk, category);
+        });
     })
 }
 
@@ -79,9 +95,8 @@ const filterize = () => {
         let value = btn.innerHTML;
         btn.addEventListener('click', () => {
             //select all cards
-            // filterProduct(value);
-            console.log(filterProduct(value));
-
+            filterProduct(value);
+            // console.log(filterProduct(value));
         })
 
     })
@@ -132,13 +147,31 @@ const searchMode = () => {
         });
     });
 }
-filterize();
-searchMode();
-filterBtn();
+
+//media-queries matches
+const displayMenu = () => {
+    const filter = document.querySelector('.filter');
+    if (breakPoint) {
+        filter.setAttribute('style', 'width:30%');
+        filterBtnMobile();
+    } else {
+        filterBtn();
+        merkFlex.classList.add('.hide')
+        categoryFlex.classList.add('.hide')
+    }
+}
+
+
+
 //Invoke display all product onCreate
 window.onload = () => {
     filterProduct("all");
 };
+//invoke all method here
+displayMenu();
+searchMode();
+filterize();
+
 
 
 var splide = new Splide('.splide', {
@@ -147,6 +180,12 @@ var splide = new Splide('.splide', {
     focus: 'center',
     rewind: true,
     rewindSpeed: 4000,
+    gap: '2em',
+    breakpoints: {
+        700: {
+            perPage: 1,
+        }
+    }
 });
 
 splide.mount();

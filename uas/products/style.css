@@ -3,7 +3,7 @@
 
 .btn {
     background-color: var(--bg-main);
-    box-shadow: 6px 6px 12px var(--shadow-top-main), -6px -6px 12px var(--shadow-bottom-main);
+    box-shadow: var(--shadow-products-btn);
     border: none;
     padding: .3em 1.5em;
 }
@@ -18,27 +18,41 @@
     font-weight: 300;
 }
 
-.btn.show {
-    background-color: var(--red-secondary);
+.btn {
+    background-color: var(--bg-main);
 }
 
-.btn.show:focus {
+.btn:focus {
     box-shadow: none;
 }
 
-.btn.show:hover {
+.btn:hover {
     background-color: var(--red-secondary);
 }
 
 .btn-outline-success {
     color: var(--font-main);
-
 }
 
 .btn-outline-success:active {
     border: none;
     box-shadow: none;
     background-color: var(--color-var-style);
+}
+
+.btn-outline-success:focus {
+    background-color: var(--red-secondary);
+    box-shadow: none;
+}
+
+
+.btn-buy:active:focus {
+    background-color: var(--red-secondary);
+}
+
+.btn-buy:focus {
+    background-color: var(--bg-main);
+    box-shadow: var(--shadow-products-btn);
 }
 
 .form-control:focus {
@@ -56,6 +70,12 @@
     height: auto;
     align-items: center;
     justify-content: space-between;
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
 }
 
 .filter-menu {
@@ -81,7 +101,7 @@
 
 .merk li:hover,
 .category li:hover {
-    border-bottom: 1px solid red;
+    border-bottom: 1px solid var(--red-secondary);
     cursor: pointer;
 }
 
@@ -101,9 +121,6 @@
     width: 100%;
 }
 
-.splide__list {
-    gap: 50px;
-}
 
 .card {
     border: none;
@@ -141,4 +158,66 @@
 .button-value:hover,
 .button-value:focus {
     border-bottom: 2px solid var(--red-secondary);
+}
+
+.splide {
+    width: 80%;
+    padding: 0 100px 80px 100px;
+}
+
+
+
+.card {
+    max-width: 300px;
+    box-shadow: 2px 2px 5px var(--shadow-btm-primary), -4px -4px 5px var(--shadow-top-primary);
+}
+
+.card-img-top {
+    height: 60%;
+}
+
+@media only screen and (max-width: 700px) {
+    .container {
+        max-width: 680px;
+        padding: 40px 20px;
+    }
+
+    a {
+        font-size: 1em;
+    }
+
+    .options-wrapper {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 2em;
+    }
+
+    .filter {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        height: 100px;
+        order: 2;
+    }
+
+    .splide {
+        width: 100%;
+        padding: 0 40px 0 40px;
+    }
+
+
+    .card {
+        width: auto !important;
+    }
+
+    .search-bar {
+        order: 1;
+        width: 100%;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+
 }

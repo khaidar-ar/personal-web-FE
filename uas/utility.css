@@ -11,6 +11,7 @@
     --shadow-top-main: #191919;
     --shadow-bottom-main: #1f1f1f;
     --red-secondary: #990000;
+    --shadow-products-btn: 6px 6px 12px var(--shadow-top-main), -6px -6px 12px var(--shadow-bottom-main);
 }
 
 
