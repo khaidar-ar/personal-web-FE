@@ -74,7 +74,7 @@ nav ul li>a:hover {
     display: none;
 }
 
-.bttn-contact>a:hover {
+.btn-contact>a:hover {
     color: var(--bg-secondary);
 }
 
@@ -173,9 +173,9 @@ main .container {
 }
 
 
-.bttn-hire {
-    padding: .3em 2.8em;
-    margin-top: 20px;
+.btn-hire {
+    padding: .5em 2em;
+    margin-top: 10px;
 }
 
 

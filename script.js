@@ -4,7 +4,7 @@ const numbs = document.querySelectorAll('.skill-title p:nth-of-type(2)');
 const times = document.querySelectorAll('.skill-content .skill-inner .skill-fill-in');
 const box = document.querySelector('.text-content::before');
 
-
+//========== menu handler on mobile-view ==========
 function menuHandler() {
     const menuShow = document.querySelector('.menu-show');
     const menuList = document.querySelector('.menu-list');
@@ -37,6 +37,7 @@ function menuHandler() {
     }
 }
 
+//========== service hover item ==========
 function serviceHovers() {
     const serviceItem = document.querySelectorAll('.service-item');
     const badge = document.querySelectorAll('.badge');
@@ -106,29 +107,28 @@ function typeAnimation() {
     setTimeout(typeAnimation, 200);
 }
 
-function invokeWhenScroll() {
-    // const box = document.querySelector('.text-content');
-    const bd = document.querySelector('body');
-    const getPages = document.querySelectorAll('.onScroll');
-    const bar = document.querySelector('.about');
-    window.addEventListener('scroll', () => {
-        const onScreen = window.innerHeight;
-        getPages.forEach(page => {
-            let onViews = page.getBoundingClientRect().top;
-            // onViews -= 0.01;
-            if (onViews < onScreen / 10) {
-                if (bar) {
-                    // prog(numbs, times);
-                }
-            } else {
-                page.classList.remove('active');
+// function invokeWhenScroll() {
+//     // const box = document.querySelector('.text-content');
+//     const bd = document.querySelector('body');
+//     const getPages = document.querySelectorAll('.onScroll');
+//     const bar = document.querySelector('.about');
+//     window.addEventListener('scroll', () => {
+//         const onScreen = window.innerHeight;
+//         getPages.forEach(page => {
+//             let onViews = page.getBoundingClientRect().top;
+//             // onViews -= 0.01;
+//             if (onViews < onScreen / 10) {
+//                 if (bar) {
+//                     // prog(numbs, times);
+//                 }
+//             } else {
+//                 page.classList.remove('active');
+//             }
+//             console.log(page.getAttribute('class') + " " + onScreen)
+//         })
+//     })
 
-            }
-            console.log(page.getAttribute('class') + " " + onScreen)
-        })
-    })
-
-}
+// }
 
 
 var splide = new Splide('.splide', {
@@ -148,6 +148,6 @@ var splide = new Splide('.splide', {
 splide.mount();
 invokePrecentageAnimationBar(numbs, times);
 typeAnimation();
-invokeWhenScroll();
+// invokeWhenScroll();
 menuHandler();
 serviceHovers();

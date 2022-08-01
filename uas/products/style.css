@@ -76,22 +76,21 @@
     display: flex;
     justify-content: space-between;
     width: auto;
+    height: auto;
 }
 
 .filter-menu {
-    width: 30%;
+    width: auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
 }
 
 .merk-menu,
 .category-menu {
     width: 100%;
-    height: 40px;
+    height: auto;
     margin: 0;
     display: flex;
-    justify-content: space-between;
 }
 
 .merk-menu li,
@@ -105,14 +104,12 @@
     cursor: pointer;
 }
 
-.hide {
-    display: none;
-}
+
 
 .products-section {
     margin: 0 auto;
     height: auto;
-    width: 80%;
+    width: 100%;
 }
 
 .splide__track {
@@ -162,10 +159,14 @@
 
 .splide {
     width: 80%;
-    padding: 0 100px 80px 100px;
+    padding: 0 60px;
 }
 
 
+
+.hide {
+    display: none;
+}
 
 .card {
     max-width: 300px;
@@ -203,12 +204,12 @@
 
     .splide {
         width: 100%;
-        padding: 0 40px 0 40px;
+        padding: 0 !important;
     }
 
 
     .card {
-        width: auto !important;
+        width: 100% !important;
     }
 
     .search-bar {

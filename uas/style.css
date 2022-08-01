@@ -42,7 +42,3 @@ span {
 .form-label {
     color: var(--font-main) !important;
 }
-
-.hide {
-    display: none;
-}

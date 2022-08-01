@@ -11,51 +11,61 @@ const categoryFlex = document.querySelector('.category-menu');
 const merk = document.querySelector('.merk');
 const category = document.querySelector('.category');
 
-//object init
-for (let i of products.data) {
-    //Create Card
-    let card = document.createElement("li");
-    //Card should have category and should stay hidden initially
-    card.classList.add("card", i.category, i.brand, "hide", "splide__slide");
-    //img tag
-    let image = document.createElement("img");
-    image.setAttribute("src", i.image);
-    image.classList.add("card-img-top")
-    card.appendChild(image);
-    card.appendChild(image);
-    //container
-    let textContent = document.createElement("div");
-    textContent.classList.add("text-content", "card-body", "mb-5");
-    //product name
-    let name = document.createElement("h5");
-    name.classList.add("product-name", "card-title");
-    name.innerText = i.productName.toUpperCase();
-    textContent.appendChild(name);
 
-    let brand = document.createElement("h6");
-    brand.classList.add("product-brand");
-    brand.innerText = i.brand.toUpperCase();
-    textContent.appendChild(brand);
+const initialize = () => {
+    let data = [];
+    for (let i of products.data) {
+        //Create Card
+        let card = document.createElement("li");
+        //Card should have category and should stay hidden initially
+        card.classList.add("card", i.category, i.brand, "hide", "splide__slide");
+        //img tag
+        let image = document.createElement("img");
+        image.setAttribute("src", i.image);
+        image.classList.add("card-img-top")
+        card.appendChild(image);
+        card.appendChild(image);
+        //container
+        let textContent = document.createElement("div");
+        textContent.classList.add("text-content", "card-body", "mb-5");
+        //product name
+        let name = document.createElement("h5");
+        name.classList.add("product-name", "card-title");
+        name.innerText = i.productName.toUpperCase();
+        textContent.appendChild(name);
 
-    let category = document.createElement("h6");
-    category.classList.add("product-category");
-    category.innerText = i.category.toUpperCase();
-    textContent.appendChild(category);
-    //price
-    let price = document.createElement("p");
-    price.innerText = "$" + i.price;
-    price.classList.add("card-text");
-    textContent.appendChild(price);
+        let brand = document.createElement("h6");
+        brand.classList.add("product-brand");
+        brand.innerText = i.brand.toUpperCase();
+        textContent.appendChild(brand);
 
-    let buy = document.createElement("a");
-    buy.innerText = "buy";
-    buy.classList.add("btn", "btn-primary", "btn-buy", "mb-3");
-    textContent.append(buy);
-    card.appendChild(textContent);
-    product.appendChild(card);
+        let category = document.createElement("h6");
+        category.classList.add("product-category");
+        category.innerText = i.category.toUpperCase();
+        textContent.appendChild(category);
+        //price
+        let price = document.createElement("p");
+        price.innerText = "$" + i.price;
+        price.classList.add("card-text");
+        textContent.appendChild(price);
+
+        let buy = document.createElement("a");
+        buy.innerText = "buy";
+        buy.classList.add("btn", "btn-primary", "btn-buy", "mb-3");
+        textContent.append(buy);
+        card.appendChild(textContent);
+        product.appendChild(card);
+        data.push(card);
+
+    }
+    return data;
 }
+//========== slide object init ==========
+let dataProducts = initialize();
 
-//display filter flex
+
+
+//========== display filter flex ==========
 const filterBtn = () => {
     filterChoose.forEach(item => {
         item.addEventListener('click', () => {
@@ -63,15 +73,17 @@ const filterBtn = () => {
         })
     })
 }
-
+//========== filter button on mobile-view ==========
 const filterBtnMobile = () => {
     const filter = document.querySelectorAll('.filter-choose');
     filter.forEach(choose => {
         choose.addEventListener('click', () => {
+            //invoke filter menu
             filterMenu(choose.innerHTML, merk, category);
         });
     })
 }
+
 
 const filterMenu = (item, menuMerk, menuCtg) => {
     if (item.toUpperCase() === "all".toUpperCase()) {
@@ -102,30 +114,27 @@ const filterize = () => {
     })
 }
 
+
 function filterProduct(value) {
-    let idx = [];
-    let elements = document.querySelectorAll(".card");
-    elements.forEach((element, i) => {
+    dataProducts.forEach((data => {
         //display all cards on 'all' button click
         if (value.toUpperCase() === "all".toUpperCase()) {
-            element.classList.remove("hide");
+            data.classList.remove("hide");
+            // product.appendChild(data);
         } else {
-
             //Check if element contains category class
-            if (element.classList.contains(value)) {
+            if (data.classList.contains(value)) {
                 //display element based on category
-                element.classList.remove("hide");
-                console.log(value)
-
+                data.classList.remove("hide");
+                // product.appendChild(data);
             } else {
                 //hide other elements
-                element.classList.add("hide");
-                idx.push(i);
+                data.classList.add("hide");
             }
         }
-    });
-    return idx;
+    }));
 }
+
 
 const searchMode = () => {
     //Search button click
@@ -148,7 +157,7 @@ const searchMode = () => {
     });
 }
 
-//media-queries matches
+//==========media-queries matches ==========
 const displayMenu = () => {
     const filter = document.querySelector('.filter');
     if (breakPoint) {
@@ -163,7 +172,7 @@ const displayMenu = () => {
 
 
 
-//Invoke display all product onCreate
+//========== Invoke display all product onCreate ==========
 window.onload = () => {
     filterProduct("all");
 };
@@ -173,17 +182,22 @@ searchMode();
 filterize();
 
 
-
+//========== slider carousel ==========
 var splide = new Splide('.splide', {
     type: 'loop',
-    perPage: 3,
+    perPage: 1,
     focus: 'center',
-    rewind: true,
-    rewindSpeed: 4000,
-    gap: '2em',
+    gap: '1em',
+    padding: {
+        left: '1rem',
+        right: '2rem'
+    },
     breakpoints: {
         700: {
             perPage: 1,
+            gap: '4em',
+            focus: 'center',
+
         }
     }
 });

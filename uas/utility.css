@@ -48,3 +48,8 @@ ul li {
     padding: 100px 80px;
     height: auto;
 }
+
+
+.hide {
+    display: none;
+}
