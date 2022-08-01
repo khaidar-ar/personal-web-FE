@@ -10,6 +10,7 @@ const merkFlex = document.querySelector('.merk-menu');
 const categoryFlex = document.querySelector('.category-menu');
 const merk = document.querySelector('.merk');
 const category = document.querySelector('.category');
+const filter = document.querySelectorAll('.filter-choose');
 
 
 const initialize = () => {
@@ -75,7 +76,7 @@ const filterBtn = () => {
 }
 //========== filter button on mobile-view ==========
 const filterBtnMobile = () => {
-    const filter = document.querySelectorAll('.filter-choose');
+
     filter.forEach(choose => {
         choose.addEventListener('click', () => {
             //invoke filter menu
@@ -83,9 +84,44 @@ const filterBtnMobile = () => {
         });
     })
 }
+const displayToggleTittle = () => {
+    let filterToggle = document.querySelector('.filter-toggle');
+    let merkToggle = document.querySelector('.merk-toggle');
+    let categoryToggle = document.querySelector('.category-toggle');
+    let merkFilter = document.querySelectorAll('.merk-choose');
+    let categoryFilter = document.querySelectorAll('.category-choose');
+    const toggleTitle = document.querySelectorAll('.dropdown-toggle');
 
+    toggleTitle.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            if (filterToggle) {
+                filter.forEach(choose => {
+                    choose.addEventListener('click', () => {
+                        filterToggle.innerHTML = choose.innerHTML;
+                    })
+                });
+            }
+            if (merkToggle) {
+                merkFilter.forEach(choose => {
+                    choose.addEventListener('click', () => {
+                        merkToggle.innerHTML = choose.innerHTML;
+                    })
+                });
+            }
+            if (categoryToggle) {
+                categoryFilter.forEach(choose => {
+                    choose.addEventListener('click', () => {
+                        categoryToggle.innerHTML = choose.innerHTML;
+                    })
+                });
+            }
+        })
+    })
+}
 
+displayToggleTittle()
 const filterMenu = (item, menuMerk, menuCtg) => {
+
     if (item.toUpperCase() === "all".toUpperCase()) {
         menuMerk.classList.add('hide');
         menuCtg.classList.add('hide');
