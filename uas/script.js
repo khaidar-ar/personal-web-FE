@@ -14,7 +14,7 @@ const register = document.querySelector('#tab-register');
 const btnLogin = document.querySelector('#login');
 const btnReg = document.querySelector('#register');
 const dirLog = document.querySelector('.direct-log')
-
+//========== validation login form ==========
 function valFromDataLogin(uName, pass) {
     for (let i of members.data) {
         if (uName.value === i.username && pass.value === i.password) {
@@ -24,9 +24,11 @@ function valFromDataLogin(uName, pass) {
         }
     }
 }
+let dataMember = [];
 
+// ========== validation Register ==========
 function valInputData(name, uName, email, pass) {
-    let i = members.data;
+    let i = {};
     i.name = name;
     i.username = uName;
     i.email = email;
@@ -34,6 +36,13 @@ function valInputData(name, uName, email, pass) {
     return i;
 }
 
+// ========== Pass Data Member Object to Array ==========
+function setDataMember() {
+    dataMember.push(valInputData);
+}
+
+
+// ========== validation ==========
 function validate() {
     if (login) {
         btnLogin.addEventListener('click', () => {

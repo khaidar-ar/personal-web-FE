@@ -64,13 +64,14 @@ function invokePrecentageAnimationBar(pNumbs, pTimes) {
     })
 }
 
+let res = 0;
+
 function precentageAnimationBar(pNumbs) {
     pNumbs.forEach(numb => {
         let numbDisplay = numb.textContent;
-        let iterator = 0;
         let time = 0;
+        let iterator = res;
         const durations = times;
-
         // ========== get-animation-duration-each-fill-in ==========
         durations.forEach(duration => {
             time = window.getComputedStyle(duration).animationDuration;
@@ -107,29 +108,21 @@ function typeAnimation() {
     setTimeout(typeAnimation, 200);
 }
 
-// function invokeWhenScroll() {
-//     // const box = document.querySelector('.text-content');
-//     const bd = document.querySelector('body');
-//     const getPages = document.querySelectorAll('.onScroll');
-//     const bar = document.querySelector('.about');
-//     window.addEventListener('scroll', () => {
-//         const onScreen = window.innerHeight;
-//         getPages.forEach(page => {
-//             let onViews = page.getBoundingClientRect().top;
-//             // onViews -= 0.01;
-//             if (onViews < onScreen / 10) {
-//                 if (bar) {
-//                     // prog(numbs, times);
-//                 }
-//             } else {
-//                 page.classList.remove('active');
-//             }
-//             console.log(page.getAttribute('class') + " " + onScreen)
-//         })
-//     })
+function invokeWhenScroll() {
+    // const box = document.querySelector('.text-content');
+    // const bd = document.querySelector('body');
+    const getPages = document.querySelectorAll('.onScroll');
+    const bar = document.querySelector('.about');
+    window.addEventListener('scroll', () => {
+        const onScreen = window.innerHeight;
+        getPages.forEach(page => {
+            let onViews = page.getBoundingClientRect().top;
+            // onViews -= 0.01;
+            if (onViews < onScreen - 150) {}
+        })
+    })
 
-// }
-
+}
 
 var splide = new Splide('.splide', {
     type: 'loop',
@@ -146,8 +139,8 @@ var splide = new Splide('.splide', {
 });
 
 splide.mount();
-invokePrecentageAnimationBar(numbs, times);
 typeAnimation();
 // invokeWhenScroll();
 menuHandler();
 serviceHovers();
+invokePrecentageAnimationBar(numbs, times);

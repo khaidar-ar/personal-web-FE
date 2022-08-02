@@ -119,7 +119,6 @@ const displayToggleTittle = () => {
     })
 }
 
-displayToggleTittle()
 const filterMenu = (item, menuMerk, menuCtg) => {
 
     if (item.toUpperCase() === "all".toUpperCase()) {
@@ -216,6 +215,7 @@ window.onload = () => {
 displayMenu();
 searchMode();
 filterize();
+displayToggleTittle()
 
 
 //========== slider carousel ==========
