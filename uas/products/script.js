@@ -221,7 +221,7 @@ displayToggleTittle()
 //========== slider carousel ==========
 var splide = new Splide('.splide', {
     type: 'loop',
-    perPage: 1,
+    perPage: 3,
     focus: 'center',
     gap: '1em',
     padding: {
@@ -233,7 +233,6 @@ var splide = new Splide('.splide', {
             perPage: 1,
             gap: '4em',
             focus: 'center',
-
         }
     }
 });
