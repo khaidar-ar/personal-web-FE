@@ -55,6 +55,30 @@
     box-shadow: var(--shadow-products-btn);
 }
 
+
+header .container {
+    height: 70px;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    padding: 0;
+    position: fixed;
+    z-index: 10;
+}
+
+.logo {
+    background-color: var(--red-secondary);
+    width: 30%;
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%);
+    height: 100%;
+    padding: 20px 40px;
+    font-family: 'Zen Tokyo Zoo', cursive;
+}
+
+.products .container h2 {
+    margin-bottom: 20px;
+}
+
 .form-control:focus {
     border-color: none;
     box-shadow: 1px 1px var(--red-secondary)inset, 0 0 8px var(--red-secondary);
@@ -120,9 +144,10 @@
 
 
 .card {
+    max-width: 300px;
     border: none;
     background-color: var(--bg-main-op);
-    box-shadow: 6px 6px 12px var(--shadow-top-main), -6px -6px 12px var(--shadow-bottom-main);
+    box-shadow: var(--shadow-products-btn);
     position: relative;
     margin-bottom: 100px;
 }
@@ -168,10 +193,6 @@
     display: none;
 }
 
-.card {
-    max-width: 300px;
-    box-shadow: 2px 2px 5px var(--shadow-btm-primary), -4px -4px 5px var(--shadow-top-primary);
-}
 
 .card-img-top {
     height: 60%;
@@ -187,11 +208,20 @@
         font-size: 1em;
     }
 
+    .logo {
+        width: 100%;
+    }
+
+    .products .container h2 {
+        margin-top: 60px;
+    }
+
     .options-wrapper {
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
         gap: 2em;
+        height: 100px;
     }
 
     .filter {

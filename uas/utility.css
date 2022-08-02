@@ -6,6 +6,7 @@
 
 :root {
     --font-main: #F6FBF4;
+    --bg: #212121;
     --bg-main: #1c1c1c;
     --bg-main-op: #1d1d1d;
     --shadow-top-main: #191919;
@@ -16,7 +17,7 @@
 
 
 body {
-    background-color: var(--bg-main);
+    background-color: var(--bg);
     color: var(--font-main);
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
